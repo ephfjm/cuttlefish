@@ -1,23 +1,27 @@
-# Cuttlefish.r: An Rscript for Structural Variant VCF Comparison
+# Cuttlefish.r: An Rscript for Structural Variant Tool Comparison
 
 ## Quickstart
 
 ```
 Rscript cuttlefish.r \
-file_1.vcf \
-file_2.vcf \
-file_1_tool_name \
-file_2_tool_name \
+tool_1.vcf \
+tool_2.vcf \
+tool_1_name \
+tool_2_name \
 start_coord_bool \
 end_coord_bool \
 coord_buffer \
 output_dir
 ```
 
-Currently only support VCFs produced by Sniffles2, CuteSV and NanoVar, with accepted "tool_names" as "snif", "cutesv" and "nv", respectively. 
+Currently only support VCFs produced by Sniffles2, CuteSV and NanoVar, with accepted "tool names" as "snif", "cutesv" and "nv", respectively.
 
-- start_coord_bool - TRUE or FALSE (Enable or diasble SV start coordinate comparison)
-- end_coord_bool - TRUE or FALSE (Enable or diasble SV end coordinate comparison)
+- tool_1.vcf - VCF file produced by tool 1
+- tool_2.vcf - VCF file produced by tool 2
+- tool_1_name - snif/cutesv/nv
+- tool_2_name - snif/cutesv/nv
+- start_coord_bool - TRUE/FALSE (Enable or diasble SV start coordinate comparison)
+- end_coord_bool - TRUE/FALSE (Enable or diasble SV end coordinate comparison)
 - coord_buffer - INT (Number of bases to create a buffer window for each SV start/end coordinate for comparison. e.g. if coord_buffer=50, then start1-50 <= start2 <= start1+50 needs to be satisfied for a hit)
 - output_dir - PATH (Directory to save output files)
 
